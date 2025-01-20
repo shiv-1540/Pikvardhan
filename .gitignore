@@ -1,0 +1,5 @@
+# Backend Node Modules
+/backend/node_modules/
+
+# Frontend Node Modules
+/frontend/node_modules/
