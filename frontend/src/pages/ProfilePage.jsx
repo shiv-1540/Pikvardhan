@@ -1,5 +1,6 @@
 // src/pages/ProfilePage.js
 import React, { useState } from 'react';
+import Navbar from '../components/common/Navbar';
 
 const ProfilePage = () => {
   const [user, setUser ] = useState({
@@ -25,6 +26,7 @@ const ProfilePage = () => {
 
   return (
     <div className="container mx-auto p-6">
+      <Navbar/>
       <h1 className="text-3xl font-bold mb-6">Profile Page</h1>
       <div className="bg-white p-6 rounded-lg shadow-md">
         {isEditing ? (

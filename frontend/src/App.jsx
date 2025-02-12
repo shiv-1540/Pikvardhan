@@ -14,6 +14,7 @@ import HomePage from './pages/Home/HomePage';
 import ProfilePage from './pages/ProfilePage';
 import Predict from './pages/Predict';
 import WeatherPage from './pages/WeatherPage';
+import CropRecom from './pages/CropRecom';
 
 
 const routes = createBrowserRouter([
@@ -24,7 +25,8 @@ const routes = createBrowserRouter([
   { path: '/profile/:username', element: <ProfilePage /> },
   { path: '/contactus', element: <Contact /> },
   { path: '/predict', element: <Predict/>},
-  { path: '/weather',element: <WeatherPage/>}
+  { path: '/weather',element: <WeatherPage/>},
+  {path:'/croprecom',element:<CropRecom/>}
 ]);
 
 
