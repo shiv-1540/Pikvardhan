@@ -17,6 +17,7 @@ import WeatherPage from './pages/WeatherPage';
 import CropRecom from './pages/CropRecom';
 
 
+
 const routes = createBrowserRouter([
   { path: '/', element: <LandingPage /> },
   { path: '/signup', element: <SignUpForm /> },
@@ -26,7 +27,7 @@ const routes = createBrowserRouter([
   { path: '/contactus', element: <Contact /> },
   { path: '/predict', element: <Predict/>},
   { path: '/weather',element: <WeatherPage/>},
-  {path:'/croprecom',element:<CropRecom/>}
+  {path:'/croprecom',element:<CropRecom/>},
 ]);
 
 

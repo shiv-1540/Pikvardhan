@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Navbar from "../components/common/Navbar";
 
 const CropRecom = () => {
   const [formData, setFormData] = useState({
@@ -26,28 +27,39 @@ const CropRecom = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
+  
     try {
-      const response = await axios.post("https://croprecomendation-tuly.onrender.com/predict", {
-        nitrogen: parseFloat(formData.nitrogen),
-        phosphorus: parseFloat(formData.phosphorus),
-        potassium: parseFloat(formData.potassium),
-        temperature: parseFloat(formData.temperature),
-        humidity: parseFloat(formData.humidity),
-        ph: parseFloat(formData.ph),
-        rainfall: parseFloat(formData.rainfall),
-      });
-
-      setPrediction(response.data.prediction);
+      const response = await axios.post(
+        "https://croprecomendation-tuly.onrender.com/predict",
+        {
+          nitrogen: parseFloat(formData.nitrogen),
+          phosphorus: parseFloat(formData.phosphorus),
+          potassium: parseFloat(formData.potassium),
+          temperature: parseFloat(formData.temperature),
+          humidity: parseFloat(formData.humidity),
+          ph: parseFloat(formData.ph),
+          rainfall: parseFloat(formData.rainfall),
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response);
+      setPrediction(response.data.recommended_crop);
     } catch (err) {
+      console.error("API Error:", err);
       setError("Failed to get a recommendation. Please try again.");
     }
-
+  
     setLoading(false);
   };
+  
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <Navbar/>
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Crop Recommendation</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

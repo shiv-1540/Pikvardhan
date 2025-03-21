@@ -15,7 +15,7 @@ const userAuthen = require('./routes/AuthenRoutes');
 
 // Enable CORS for all origins (or specify allowed origins)
 app.use(cors({
-    origin: 'http://localhost:5173', // Your frontend's origin
+    origin: '*', // Your frontend's origin
     credentials: true,  //Allow cookie sending
 }));
 app.use(express.json());

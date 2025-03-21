@@ -58,7 +58,7 @@ function Navbar() {
 
           <button
           className=" hover:bg-gray-600 text-gray-800 font-bold py-2 px-4 rounded transition duration-300 ease-in-out"
-          onClick={() => window.location.href = 'https://cropdiseaseprediction.onrender.com/'}
+          onClick={() => navigate('/predict')}
           >
             Predict Disease
           </button>
